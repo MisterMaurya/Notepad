@@ -1,0 +1,9 @@
+#menubar{
+	-fx-font-size: 13.0px;
+	fx-label-font-weight:bolder;
+	
+}
+#header{
+	-fx-border-width: 0 0 0 1;
+	 -fx-border-color: #c6c4c2;
+}

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <center>
+      <TextArea fx:id="textArea" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font></TextArea>
+   </center>
+   <top>
+      <VBox prefHeight="72.0">
+         <children>
+            <VBox prefHeight="40.0" style="-fx-background-color: #dfe4ea;">
+               <children>
+                  <HBox fx:id="header" prefHeight="100.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label fx:id="label" prefHeight="36.0" prefWidth="562.0" text=" Notepad" textFill="#eb2b2b">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_RIGHT">
+                           <children>
+                              <HBox alignment="TOP_RIGHT" prefHeight="36.0" prefWidth="16.0" style="-fx-background-color: #dfe4ea;">
+                                 <children>
+                                    <FontAwesomeIconView fill="#45cbe9" glyphName="MINUS" onMouseClicked="#min" size="1.2em">
+                                       <HBox.margin>
+                                          <Insets right="12.0" top="12.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIconView>
+                                    <FontAwesomeIconView fill="#1dd1a1ba" glyphName="CIRCLE" onMouseClicked="#max" size="1.2em" text="">
+                                       <HBox.margin>
+                                          <Insets right="12.0" top="12.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIconView>
+                                    <FontAwesomeIconView fill="#ee5253" glyphName="CLOSE" onMouseClicked="#close" size="1.2EM" text="">
+                                       <HBox.margin>
+                                          <Insets right="12.0" top="12.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIconView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="40.0">
+               <children>
+                  <MenuBar fx:id="menubar" prefHeight="37.0" prefWidth="600.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem fx:id="newFile" mnemonicParsing="false" onAction="#newFile" text="New" />
+                              <MenuItem fx:id="open" mnemonicParsing="false" onAction="#openFile" text="Open.." />
+                              <MenuItem fx:id="save" mnemonicParsing="false" onAction="#saveFile" text="Save" />
+                              <MenuItem fx:id="saveas" mnemonicParsing="false" onAction="#saveasFile" text="Save As..." />
+                              <MenuItem mnemonicParsing="false" text="Print..." />
+                              <MenuItem mnemonicParsing="false" text="Exit" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edit">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                      </Menu>
+                        <Menu mnemonicParsing="false" text="Format">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Font..." />
+                          </items>
+                        </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </MenuBar>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>
